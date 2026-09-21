@@ -1,9 +1,9 @@
 # BiuEcho 隐私权政策 / Privacy Policy
 
-> 生效日期 / Effective date：2026-09-18  
+> 生效日期 / Effective date：2026-09-21  
 > 产品 / Product：BiuEcho（Chrome 扩展 · 多平台 AI 对话可见度监测）  
 > 运营方联系邮箱 / Contact： [service@3biu.cn](mailto:service@3biu.cn)  
-> 建议公网地址 / Suggested public URL：`https://geo.3biu.cn/privacy`  
+> 公网地址 / Public URL：https://401team.github.io/biuecho-privacy/  
 > 配套可部署页面：同目录 [`privacy-policy.html`](./privacy-policy.html)
 
 本文供 Chrome 网上应用店「隐私权政策」字段使用。部署 `privacy-policy.html`（或等价 Markdown 渲染页）到公网 HTTPS 后，将 URL 填入 Developer Dashboard。
@@ -39,6 +39,7 @@ BiuEcho（下称「本扩展」或「本服务」）用于在用户选定的 AI 
 
 - 邮箱登录时提交的**密码**（用于鉴权；传输使用 HTTPS；我们不会在商店页面或扩展界面中公开展示密码）
 - 访问**令牌 / 凭证**（用于维持登录会话）
+- 当付费套餐开启「登录态管理」且您主动保存/恢复某 AI 平台登录态时：该站点的 **Cookie** 以及您选择纳入快照的页面 **localStorage / sessionStorage**（用于多账号切换后继续检测）。此类快照**仅保存在本机**扩展存储，**不会上传**到我们的云端。
 
 #### 3.3 网站内容与用户生成内容
 
@@ -46,6 +47,7 @@ BiuEcho（下称「本扩展」或「本服务」）用于在用户选定的 AI 
 - 从 AI 对话页面采集的**回复全文、回复 HTML**
 - 按您选择生成的**视口截图、对话区长截图**等图像内容
 - 可选的**关键词**及其匹配结果
+- 若您启用登录态并选择在结果中记录账号：检测结果中可能包含 AI 平台**账号显示名**（可脱敏或原名，或选择不记录）；付费版写入云端时一并保存，便于区分同平台不同账号的检测
 
 #### 3.4 网络记录（与检测相关）
 
@@ -70,6 +72,7 @@ BiuEcho（下称「本扩展」或「本服务」）用于在用户选定的 AI 
 | 登录 | 内置免费身份，无需个人邮箱密码 | 邮箱密码或访问令牌 |
 | 检测结果 / 提示词 | 主要保存在**本机**（浏览器扩展存储） | 写入**云端**（默认 `geo.3biu.cn`） |
 | 截图 | 边截边下载到本机；结果中通常不长期保留图片 | 可上传云端，便于结果页回看 |
+| 登录态快照（Cookie 等） | 不支持 | 套餐可开：仅**本机**保存；不上传云端 |
 | 异常 | 本机现场，不上报云端 | 可选择上报或不上报 |
 
 即使数据仅保存在本机，也属于对本政策所述用户数据的「处理」。请妥善保管您的设备与浏览器配置文件。
@@ -80,11 +83,12 @@ BiuEcho（下称「本扩展」或「本服务」）用于在用户选定的 AI 
 
 1. 完成您发起的多平台 AI 对话可见度监测  
 2. 账号鉴权、套餐/客户授权校验与会话维持  
-3. 在侧栏与结果页展示、筛选、导出检测结果  
-4. 安全防护、防滥用、故障排查与客户支持  
-5. 履行适用法律法规要求  
+3. （可选）在本机保存与恢复 AI 平台登录态，以便多账号检测  
+4. 在侧栏与结果页展示、筛选、导出检测结果  
+5. 安全防护、防滥用、故障排查与客户支持  
+6. 履行适用法律法规要求  
 
-我们不会将用户数据用于与上述单一用途无关的目的，不会用于确定信用度或贷款资格，也不会向第三方出售用户数据。
+我们不会将用户数据用于与上述单一用途无关的目的，不会用于确定信用度或贷款资格，也不会向第三方出售用户数据。登录态 Cookie 快照仅用于您选定平台上的检测登录恢复，不会用于无关站点或广告画像。
 
 ### 6. 共享与第三方
 
@@ -108,6 +112,7 @@ BiuEcho（下称「本扩展」或「本服务」）用于在用户选定的 AI 
 您可以：
 
 - 在选项页退出登录、更换令牌或清除本机相关配置  
+- 在「登录态管理」中删除本机登录态快照，或选择结果中不记录账号名  
 - 删除本机或云端提示词/历史（在产品能力范围内）  
 - 卸载本扩展以停止新的数据采集  
 - 通过 service@3biu.cn 请求查阅、更正、导出或删除云端账号相关数据  
@@ -161,6 +166,7 @@ Depending on free vs paid use and the detection options you enable, we may proce
 
 - **Password** submitted for email login (sent over HTTPS; never publicly displayed)  
 - Access **tokens / credentials** used to maintain a session  
+- When paid “login-state management” is enabled and you explicitly save/restore a login for an AI site: that site’s **cookies** and optional page **localStorage / sessionStorage** snapshots. These snapshots are stored **on-device only** and are **not uploaded** to our cloud.
 
 #### 3.3 Website content & user-generated content
 
@@ -168,6 +174,7 @@ Depending on free vs paid use and the detection options you enable, we may proce
 - **Full reply text and HTML** captured from AI chat pages  
 - **Screenshots** (viewport and/or long conversation captures) you choose to collect  
 - Optional **keywords** and match results  
+- Optional AI-site **account display names** attached to results (masked, raw, or none), which may sync to the cloud on paid plans
 
 #### 3.4 Web history (task-related)
 
@@ -192,6 +199,7 @@ We do **not** collect health data or payment card numbers through the Extension,
 | Sign-in | Built-in free identity | Email/password or access token |
 | Results / prompts | Primarily **on-device** | Stored in the **cloud** (default `geo.3biu.cn`) |
 | Screenshots | Downloaded locally during runs | May upload for later review |
+| Login-state snapshots (cookies, etc.) | Not available | Optional plan feature; **on-device only**, not uploaded |
 | Incidents | Local only | Optional cloud report |
 
 On-device storage still constitutes handling of user data under this Policy.
@@ -202,11 +210,12 @@ We use data only to provide and improve BiuEcho’s **single purpose**, includin
 
 1. Running multi-platform AI visibility detection you initiate  
 2. Authentication, authorization, and session maintenance  
-3. Showing, filtering, and exporting results in the UI  
-4. Security, abuse prevention, troubleshooting, and support  
-5. Compliance with applicable law  
+3. Optionally saving/restoring AI-site login state on-device for multi-account runs  
+4. Showing, filtering, and exporting results in the UI  
+5. Security, abuse prevention, troubleshooting, and support  
+6. Compliance with applicable law  
 
-We do not sell user data, use it for unrelated purposes, or use it to determine creditworthiness or for lending.
+We do not sell user data, use it for unrelated purposes, or use it to determine creditworthiness or for lending. Login-state cookie snapshots are used only to restore login on sites you choose for detection—not for unrelated sites or advertising profiles.
 
 ### 6. Sharing
 
@@ -226,7 +235,7 @@ We transmit data between the client and our servers using **HTTPS** and apply re
 
 ### 9. Your choices
 
-You may sign out, rotate tokens, delete prompts/history within product capabilities, uninstall the Extension, or email service@3biu.cn to request access, correction, export, or deletion of cloud account data.
+You may sign out, rotate tokens, delete on-device login-state snapshots, choose not to record account names in results, delete prompts/history within product capabilities, uninstall the Extension, or email service@3biu.cn to request access, correction, export, or deletion of cloud account data.
 
 ### 10. Children
 
